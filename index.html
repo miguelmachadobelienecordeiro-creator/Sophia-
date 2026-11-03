@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Sophia 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffb6d0, #ffe4ef, #ff9fbd);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  padding: 35px 25px;
+  border-radius: 30px;
+  text-align: center;
+  max-width: 430px;
+  width: 100%;
+  box-shadow: 0 10px 40px #d85b8960;
+  z-index: 2;
+}
+
+.heart {
+  font-size: 65px;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.2); }
+}
+
+h1 {
+  color: #e84378;
+  font-size: 32px;
+}
+
+p {
+  color: #87445e;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+button {
+  background: #ff5790;
+  color: white;
+  border: none;
+  padding: 15px 28px;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#surpresa {
+  display: none;
+  color: #e84378;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.floating {
+  position: absolute;
+  bottom: -30px;
+  animation: subir 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes subir {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="heart">💗</div>
+
+<h1>Gosto de você, Sophia!</h1>
+
+<p>
+Sophia, queria que você soubesse
+o quanto é especial. ❤️
+</p>
+
+<p>
+Seu sorriso deixa tudo mais bonito,
+sua presença torna os momentos melhores
+e você merece todo carinho do mundo.
+</p>
+
+<p>
+Fiz esse pequeno cantinho especialmente
+para você, com muito carinho. 🥹💕
+</p>
+
+<button onclick="surpresa()">Clique aqui 💌</button>
+
+<div id="surpresa">
+Você é muito especial para mim, Sophia! 💖
+<br><br>
+Gosto muito de você! 🥰
+</div>
+
+<p>Feito com carinho ❤️</p>
+
+</div>
+
+<script>
+function surpresa() {
+  document.getElementById("surpresa").style.display = "block";
+}
+
+function criarCoracao() {
+  const coracao = document.createElement("div");
+  coracao.className = "floating";
+  coracao.innerHTML = ["💗","💕","💖","❤️","💘"][Math.floor(Math.random()*5)];
+  coracao.style.left = Math.random() * 100 + "vw";
+  coracao.style.fontSize = (15 + Math.random()*25) + "px";
+  coracao.style.animationDuration = (5 + Math.random()*5) + "s";
+
+  document.body.appendChild(coracao);
+
+  setTimeout(() => coracao.remove(), 10000);
+}
+
+setInterval(criarCoracao, 350);
+</script>
+
+</body>
+</html>
